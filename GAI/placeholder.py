@@ -7,8 +7,8 @@ def placeholder(payload):
     imagesize = img.size        # img.size[0]は幅、img.size[1]は高さを表す
     draw = ImageDraw.Draw(img)  # ImageDrawオブジェクトを作成
 
-    font = ImageFont.truetype("../font/Roboto-Regular.ttf", 64)  # フォントを指定、64はサイズでピクセル単位
-    log = ImageFont.truetype("../font/Roboto-Regular.ttf",20)
+    font = ImageFont.truetype("./font/Roboto-Regular.ttf", 64)  # フォントを指定、64はサイズでピクセル単位
+    log = ImageFont.truetype("./font/Roboto-Regular.ttf",20)
     size = font.getsize(text)
 
     # 画像右下に'Sampleと表示' #FFFは文字色（白）
