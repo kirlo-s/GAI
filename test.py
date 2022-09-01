@@ -1,4 +1,4 @@
-from GAI import daily_calendar,weekly_calendar,information_card
+from GAI import calendar_daily, calendar_weekly, card
 
 payload = {"owner":"owner",
     "info":{
@@ -6,6 +6,6 @@ payload = {"owner":"owner",
 }
 }
 
-information_card.generate(payload)
-weekly_calendar.generate(payload)
-daily_calendar.generate(payload)
+card.generate(payload)
+calendar_weekly.generate(payload)
+calendar_daily.generate(payload)
