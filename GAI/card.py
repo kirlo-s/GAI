@@ -1,4 +1,6 @@
+from http import server
 from PIL import Image,ImageDraw,ImageFont
+from util.imgutil import textbox
 
 #色選択
 title_color = (38,255,223)
@@ -8,11 +10,11 @@ red = (255,138,52)
 blue = (80,80,255)
 
 #フォント選択
-font_title = ImageFont.truetype("./font/Teko-Regular.ttf",100)
 font_owner = ImageFont.truetype("./font/Teko-Regular.ttf",75)
 font_time = ImageFont.truetype("./font/Teko-Regular.ttf",50)
 font_prev = ImageFont.truetype("./font/OpenSans-Bold.ttf",30)
 font_next = ImageFont.truetype("./font/OpenSans-Bold.ttf",25)
+font_title = ImageFont.truetype("./font/Teko-Regular.ttf",95)
 
 def generate(payload):
     #世代変更用コード,ベースを選択する
@@ -27,12 +29,21 @@ def generate(payload):
     server_name = payload["info"]["name"]
     owner = payload["owner"]
     time = "{}-{}".format(payload["time"]["start"],payload["time"]["end"])
-    server_name = server_name    
-
+    
+    #タイトルの整形
+    title,NoL = textbox().card_title(server_name)
+    print(title)
+    
     #文字列の描画
     draw.text((770,480),owner,font=font_owner,fill=text_color,anchor='rb')
-    draw.text((50,100),server_name,font=font_title,fill=title_color)
     draw.text((320,550),time,font=font_time,fill=black)
+
+    #センタリングの簡易実装
+    bbox = draw.multiline_textbbox((0, 0), title, font=font_title)
+    width = 400 - ((bbox[2] - bbox[0])//2)
+    height = 250 - ((bbox [3] - bbox[1])//2)
+    #タイトル描画
+    draw.text((width,height),title,font=font_title,fill=title_color)
     
     if(payload["Gen"]):
         draw.text((565,495),"PC/PS5/Xbox X,S",font=font_next,fill=black)

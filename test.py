@@ -3,7 +3,10 @@ from GAI import calendar_daily, calendar_weekly, card
 payload = {
     "owner":"owner",
     "info":{
-        "name" : "aaaaaaaaaaaa"
+        "name_" : "Suspendisse volutpat",
+        "name_" : "Nulla non arcu id tellus dignissim morbi",
+        "name_" : "Donec faucibus risus volutpat massa nunc",
+        "name_" : "Etiam egestas imperdiet orci eu posuere. Nulla sit amet nisi"
     },
     "Gen" : False,
     "time":{
