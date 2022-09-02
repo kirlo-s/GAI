@@ -14,7 +14,7 @@ font_owner = ImageFont.truetype("./font/Teko-Regular.ttf",75)
 font_time = ImageFont.truetype("./font/Teko-Regular.ttf",50)
 font_prev = ImageFont.truetype("./font/OpenSans-Bold.ttf",30)
 font_next = ImageFont.truetype("./font/OpenSans-Bold.ttf",25)
-font_title = ImageFont.truetype("./font/Teko-Regular.ttf",95)
+font_title = ImageFont.truetype("./font/Teko-Regular.ttf",90)
 
 def generate(payload):
     #世代変更用コード,ベースを選択する
@@ -31,7 +31,7 @@ def generate(payload):
     time = "{}-{}".format(payload["time"]["start"],payload["time"]["end"])
     
     #タイトルの整形
-    title,NoL = textbox().card_title(server_name)
+    title = textbox().card_title(server_name)
     print(title)
     
     #文字列の描画
