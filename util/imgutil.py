@@ -7,22 +7,8 @@ import textwrap
 class textbox:
     def card_title(self,text):
         text = text.upper()
-        l = text.split(" ")
-        #文字列整形
-        list = [""]
-        n = 0
-        i = 0
-        while i < len(l):
-            print(i)
-            if len(list[n]) <= 15:
-                list[n] += l[i] + " "
-            else:
-                list.append("")
-                n +=1
-                i -=1
-            i +=1
+        list = textwrap.wrap(width=20,text=text)
         
-        print(list)
         #段落作成
         formatted = ""
         indent = "   "

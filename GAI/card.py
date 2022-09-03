@@ -14,7 +14,8 @@ font_owner = ImageFont.truetype("./font/Teko-Regular.ttf",75)
 font_time = ImageFont.truetype("./font/Teko-Regular.ttf",50)
 font_prev = ImageFont.truetype("./font/OpenSans-Bold.ttf",30)
 font_next = ImageFont.truetype("./font/OpenSans-Bold.ttf",25)
-font_title = ImageFont.truetype("./font/Teko-Regular.ttf",90)
+font_title = ImageFont.truetype("./font/BF_Modernista-Bold.ttf",65)
+
 
 def generate(payload):
     #世代変更用コード,ベースを選択する
@@ -32,7 +33,6 @@ def generate(payload):
     
     #タイトルの整形
     title = textbox().card_title(server_name)
-    print(title)
     
     #文字列の描画
     draw.text((770,480),owner,font=font_owner,fill=text_color,anchor='rb')
