@@ -60,9 +60,9 @@ class card:
     def _generate(self,payload):
         #世代変更用コード,ベースを選択する
         if(payload["Gen"]):
-            card = self.card_prev
-        else:
             card = self.card_next
+        else:
+            card = self.card_prev
         im = Image.open(card)
         draw = ImageDraw.Draw(im)
         
